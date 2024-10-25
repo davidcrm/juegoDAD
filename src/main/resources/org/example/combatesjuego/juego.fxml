@@ -8,11 +8,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="771.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="771.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.combatesjuego.JuegoController">
    <children>
       <ImageView fitHeight="774.0" fitWidth="771.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -26,12 +26,12 @@
             </BoxBlur>
          </effect>
       </ImageView>
-      <ImageView fitHeight="255.0" fitWidth="263.0" layoutX="51.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="jugador1" fitHeight="255.0" fitWidth="263.0" layoutX="51.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../img/luchador1.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="255.0" fitWidth="268.0" layoutX="475.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="jugador2" fitHeight="255.0" fitWidth="268.0" layoutX="475.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../img/luchador2.png" />
          </image>
@@ -78,47 +78,47 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <ImageView fitHeight="64.0" fitWidth="79.0" layoutX="36.0" layoutY="489.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="j1v1" fitHeight="64.0" fitWidth="79.0" layoutX="36.0" layoutY="489.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../img/vida.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="64.0" fitWidth="77.0" layoutX="150.0" layoutY="490.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="j1v2" fitHeight="64.0" fitWidth="77.0" layoutX="150.0" layoutY="490.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../img/vida.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="64.0" fitWidth="81.0" layoutX="261.0" layoutY="490.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="j1v3" fitHeight="64.0" fitWidth="81.0" layoutX="261.0" layoutY="490.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../img/vida.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="458.0" layoutY="490.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="j2v1" fitHeight="64.0" fitWidth="64.0" layoutX="458.0" layoutY="490.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../img/vida.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="64.0" fitWidth="70.0" layoutX="570.0" layoutY="490.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="j2v2" fitHeight="64.0" fitWidth="70.0" layoutX="570.0" layoutY="490.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../img/vida.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="64.0" fitWidth="76.0" layoutX="680.0" layoutY="490.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="j2v3" fitHeight="64.0" fitWidth="76.0" layoutX="680.0" layoutY="490.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../img/vida.png" />
          </image>
       </ImageView>
-      <Label layoutX="207.0" layoutY="16.0" prefHeight="82.0" prefWidth="215.0" text="Pelea por:" textFill="#f08e00">
+      <Label layoutX="177.0" layoutY="19.0" prefHeight="82.0" prefWidth="215.0" text="Pelea por:" textFill="#f08e00">
          <font>
             <Font name="Ani" size="48.0" />
          </font>
       </Label>
-      <Label layoutX="424.0" layoutY="14.0" prefHeight="82.0" prefWidth="215.0" text="Destreza" textFill="#9a9a9a">
+      <Label fx:id="modalidadLabel" layoutX="394.0" layoutY="15.0" prefHeight="82.0" prefWidth="215.0" textFill="#9a9a9a">
          <font>
             <Font name="Ani" size="48.0" />
          </font>
       </Label>
-      <Label layoutX="11.0" layoutY="554.0" prefHeight="62.0" prefWidth="159.0" text="Destreza:">
+      <Label layoutX="11.0" layoutY="554.0" prefHeight="62.0" prefWidth="159.0" text="Destreza">
          <font>
             <Font name="Ani" size="36.0" />
          </font>
@@ -139,7 +139,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label layoutX="11.0" layoutY="632.0" prefHeight="62.0" prefWidth="159.0" text="Fuerza:">
+      <Label layoutX="11.0" layoutY="632.0" prefHeight="62.0" prefWidth="159.0" text="Fuerza">
          <font>
             <Font name="Ani" size="36.0" />
          </font>
@@ -160,7 +160,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label layoutX="11.0" layoutY="697.0" prefHeight="62.0" prefWidth="159.0" text="Suerte:">
+      <Label layoutX="11.0" layoutY="697.0" prefHeight="62.0" prefWidth="159.0" text="Suerte">
          <font>
             <Font name="Ani" size="36.0" />
          </font>
@@ -181,7 +181,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label layoutX="491.0" layoutY="554.0" prefHeight="62.0" prefWidth="159.0" text="Destreza:">
+      <Label layoutX="615.0" layoutY="564.0" prefHeight="62.0" prefWidth="159.0" text="Destreza">
          <font>
             <Font name="Ani" size="36.0" />
          </font>
@@ -202,7 +202,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label layoutX="491.0" layoutY="616.0" prefHeight="62.0" prefWidth="159.0" text="Fuerza:">
+      <Label layoutX="627.0" layoutY="632.0" prefHeight="62.0" prefWidth="120.0" text="Fuerza">
          <font>
             <Font name="Ani" size="36.0" />
          </font>
@@ -223,7 +223,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label layoutX="491.0" layoutY="694.0" prefHeight="62.0" prefWidth="159.0" text="Suerte:">
+      <Label layoutX="634.0" layoutY="697.0" prefHeight="62.0" prefWidth="120.0" text="Suerte">
          <font>
             <Font name="Ani" size="36.0" />
          </font>
@@ -244,7 +244,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label alignment="CENTER" layoutX="169.0" layoutY="564.0" prefHeight="62.0" prefWidth="96.0" text="0">
+      <Label fx:id="destreza1" alignment="CENTER" layoutX="166.0" layoutY="564.0" prefHeight="62.0" prefWidth="96.0" text="125">
          <font>
             <Font name="Ani" size="36.0" />
          </font>
@@ -265,7 +265,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label alignment="CENTER" layoutX="166.0" layoutY="632.0" prefHeight="62.0" prefWidth="96.0" text="0">
+      <Label fx:id="fuerza1" alignment="CENTER" layoutX="166.0" layoutY="632.0" prefHeight="62.0" prefWidth="96.0" text="180">
          <font>
             <Font name="Ani" size="36.0" />
          </font>
@@ -286,7 +286,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label alignment="CENTER" layoutX="166.0" layoutY="697.0" prefHeight="62.0" prefWidth="96.0" text="0">
+      <Label fx:id="suerte1" alignment="CENTER" layoutX="166.0" layoutY="697.0" prefHeight="62.0" prefWidth="96.0" text="90">
          <font>
             <Font name="Ani" size="36.0" />
          </font>
@@ -307,7 +307,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label alignment="CENTER" layoutX="664.0" layoutY="564.0" prefHeight="62.0" prefWidth="96.0" text="0">
+      <Label fx:id="destreza2" alignment="CENTER" layoutX="512.0" layoutY="564.0" prefHeight="62.0" prefWidth="96.0" text="175">
          <font>
             <Font name="Ani" size="36.0" />
          </font>
@@ -328,7 +328,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label alignment="CENTER" layoutX="664.0" layoutY="632.0" prefHeight="62.0" prefWidth="96.0" text="0">
+      <Label fx:id="fuerza2" alignment="CENTER" layoutX="512.0" layoutY="632.0" prefHeight="62.0" prefWidth="96.0" text="170">
          <font>
             <Font name="Ani" size="36.0" />
          </font>
@@ -349,7 +349,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label alignment="CENTER" layoutX="664.0" layoutY="694.0" prefHeight="62.0" prefWidth="96.0" text="0">
+      <Label fx:id="suerte2" alignment="CENTER" layoutX="512.0" layoutY="697.0" prefHeight="62.0" prefWidth="96.0" text="100">
          <font>
             <Font name="Ani" size="36.0" />
          </font>
@@ -370,7 +370,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label alignment="CENTER" layoutX="104.0" layoutY="80.0" prefHeight="88.0" prefWidth="107.0" text="0">
+      <Label fx:id="numeroEtiqueta1" alignment="CENTER" layoutX="104.0" layoutY="80.0" prefHeight="110.0" prefWidth="181.0" text="0">
          <font>
             <Font name="Ani" size="64.0" />
          </font>
@@ -391,7 +391,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label alignment="CENTER" layoutX="532.0" layoutY="80.0" prefHeight="88.0" prefWidth="107.0" text="0">
+      <Label fx:id="numeroEtiqueta2" alignment="CENTER" layoutX="480.0" layoutY="80.0" prefHeight="110.0" prefWidth="159.0" text="0">
          <font>
             <Font name="Ani" size="64.0" />
          </font>
@@ -422,5 +422,89 @@
             <Image url="@../../../img/role-play-dice-icon-447ace.png" />
          </image>
       </ImageView>
+      <Label fx:id="comenzarLabel" alignment="CENTER" layoutX="274.0" layoutY="523.0" onMouseClicked="#comenzarJuego" prefHeight="82.0" prefWidth="223.0" text="&lt;&lt;Comenzar&gt;&gt;">
+         <font>
+            <Font name="Ani" size="36.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.017799999564886093" green="0.5400089025497437" blue="0.8899999856948853" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <Label fx:id="resolverLabel" alignment="CENTER" layoutX="258.0" layoutY="618.0" onMouseClicked="#resolver" prefHeight="82.0" prefWidth="255.0" text="&lt;&lt;Resolucion&gt;&gt;">
+         <font>
+            <Font name="Ani" size="36.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.8899999856948853" green="0.017799999564886093" blue="0.8511121273040771" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <Label fx:id="nuevoLabel" alignment="CENTER" layoutX="228.0" layoutY="674.0" onMouseClicked="#comenzarJuego" prefHeight="82.0" prefWidth="289.0" text="&lt;&lt;Nueva Pelea&gt;&gt;">
+         <font>
+            <Font name="Ani" size="36.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.8122242093086243" green="0.8899999856948853" blue="0.017799999564886093" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <Label fx:id="comenzarLabel1" alignment="CENTER" layoutX="275.0" layoutY="577.0" onMouseClicked="#comenzarJuego" prefHeight="82.0" prefWidth="223.0" text="&lt;&lt;Pelea!!&gt;&gt;">
+         <font>
+            <Font name="Ani" size="36.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color green="1.0" blue="0.9333333373069763" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
    </children>
 </AnchorPane>
